@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Toolbar android:title="@string/ApplicationName" 
+         android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar" 
+         android:logo="@drawable/findWhite" android:background="@color/primary" 
+         android:minHeight="?android:attr/actionBarSize" android:layout_height="wrap_content" 
+         android:layout_width="match_parent" android:id="@+id/toolBar" 
+         xmlns:android="http://schemas.android.com/apk/res/android"/>
