@@ -4,490 +4,510 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-  <include
-      android:id="@+id/toolBar"
-      layout="@layout/toolBar" />
-  <TextView
-      android:id="@+id/noResultsText"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:visibility="gone"
-      android:text="Sorry! No results have been found for that company domain :( " />
-  <ScrollView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content">
-    <LinearLayout
-        android:orientation="vertical"
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/toolBar" />
+    <TextView
+        android:id="@+id/noResultsText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:id="@+id/linearLayout">
-      <EditText
-          android:id="@+id/emailText"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:inputType="textEmailAddress"
-          android:paddingBottom="20dp"
-          android:hint="Enter company domain" />
-      <Button
-          android:id="@+id/findButton"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="end"
-          android:padding="10dp"
-          android:background="@color/accent"
-          android:textColor="@color/primary_light"
-          android:textSize="20dp"
-          android:text="Search" />
-      <RelativeLayout
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:gravity="center">
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:indeterminate="true"
-            android:visibility="gone" />
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-          <TextView
-              android:id="@+id/resultView"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content" />
-        </ScrollView>
-      </RelativeLayout>
-      <WebView
-          android:layout_width="300dp"
-          android:layout_height="150dp"
-          android:padding="10dp"
-          android:id="@+id/logoWebView"
-          android:layout_marginRight="40dp"
-          android:visibility="gone" />
-      <LinearLayout
-          android:orientation="vertical"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/organazationSection"
-          android:paddingBottom="15dp">
-        <!--Organization Info-->
-        <TextView
-            android:text="Organization Info"
-             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/primary_text"
-            android:gravity="left"
-            android:paddingTop="10dp"
-            android:paddingBottom="15dp" />
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="15dp">
-          <TextView
-              android:text="Name: "
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="200dp"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/primary_text"
-              android:id="@+id/NameLabel" />
-          <TextView
-              android:text=""
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="wrap_content"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/secondary_text"
-              android:id="@+id/nameText" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="15dp">
-          <TextView
-              android:text="On line since: "
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="200dp"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/primary_text"
-              android:id="@+id/onLineLabel" />
-          <TextView
-              android:text=""
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="wrap_content"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/secondary_text"
-              android:id="@+id/onLineText" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="15dp">
-          <TextView
-              android:text="Number of Employees: "
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="200dp"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/primary_text"
-              android:id="@+id/numEmpLabel" />
-          <TextView
-              android:text=""
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="wrap_content"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/secondary_text"
-              android:id="@+id/numEmpText" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="15dp">
-          <TextView
-              android:text="Founded in: "
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="200dp"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/primary_text"
-              android:id="@+id/foundedLabel" />
-          <TextView
-              android:text=""
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="wrap_content"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/secondary_text"
-              android:id="@+id/foundedText" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="15dp">
-          <TextView
-              android:text="Website: "
-              android:layout_width="200dp"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/primary_text"
-              android:id="@+id/websiteLabel"
-              android:textAppearance="?android:attr/textAppearanceMedium" />
-          <TextView
-              android:text=""
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="wrap_content"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/secondary_text"
-              android:id="@+id/websiteText" />
-        </LinearLayout>
-        <!--Social Profiles-->
-        <TextView
-            android:text="Social Profiles "
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/primary_text"
-            android:gravity="left"
-            android:paddingTop="10dp"
-            android:paddingBottom="15dp" />
+        android:visibility="gone"
+        android:text="Sorry! No results have been found for that company domain :( " />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/socialProfilesSection"
             android:padding="10dp"
-            android:paddingBottom="15dp">
-          <TextView
-              android:text=""
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="wrap_content"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/primary_text"
-              android:id="@+id/social1Text" />
-          <TextView
-              android:text=""
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="wrap_content"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/secondary_text"
-              android:id="@+id/social2Text" />
-        </LinearLayout>
-        <!--Links-->
-        <TextView
-            android:text="Links "
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/primary_text"
-            android:gravity="left"
-            android:paddingTop="10dp"
-            android:paddingBottom="15dp" />
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/linksSection"
-            android:padding="10dp"
-            android:paddingBottom="15dp">
-          <TextView
-              android:text=""
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="wrap_content"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/secondary_text"
-              android:id="@+id/link1Text" />
-          <TextView
-              android:text=""
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="wrap_content"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/secondary_text"
-              android:id="@+id/link2Text" />
-        </LinearLayout>
-        <TextView
-            android:text="Overview"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/primary_text"
-            android:gravity="left"
-            android:paddingTop="10dp"
-            android:paddingBottom="15dp" />
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/linksSection"
-            android:padding="10dp"
-            android:paddingBottom="15dp">
-          <TextView
-              android:text=""
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:gravity="left"
-              android:textColor="@color/secondary_text"
-              android:id="@+id/overviewText" />
-        </LinearLayout>
-        <!--Contact Info-->
-        <TextView
-            android:text="Contact Info"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/primary_text"
-            android:gravity="left"
-            android:paddingTop="10dp"
-            android:paddingBottom="15dp" />
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="15dp">
-          <TextView
-              android:text="Email 1: "
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="200dp"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/primary_text"
-              android:id="@+id/email1Label" />
-          <TextView
-              android:text=""
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="wrap_content"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:id="@+id/email1Text"
-              android:textColor="@color/secondary_text" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="15dp">
-          <TextView
-              android:text="Email 2: "
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="200dp"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/primary_text"
-              android:id="@+id/email2Label" />
-          <TextView
-              android:text=""
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="wrap_content"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:id="@+id/email2Text"
-              android:textColor="@color/secondary_text" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="15dp">
-          <TextView
-              android:text="Phone 1: "
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="200dp"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/primary_text"
-              android:id="@+id/phone1Label" />
-          <TextView
-              android:text=""
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="wrap_content"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:id="@+id/phone1Text"
-              android:textColor="@color/secondary_text" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="15dp">
-          <TextView
-              android:text="Phone 2: "
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="200dp"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/primary_text"
-              android:id="@+id/phone2Label" />
-          <TextView
-              android:text=""
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="wrap_content"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:id="@+id/phone2Text"
-              android:textColor="@color/secondary_text" />
-        </LinearLayout>
-        <!--Address-->
-        <TextView
-            android:text="Address:"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:textColor="@color/primary_text"
-            android:id="@+id/addressLabel" />
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/addressesSection">
-          <TextView
-              android:text=""
-              android:textAppearance="?android:attr/textAppearanceMedium"
-              android:layout_width="wrap_content"
-              android:layout_height="20dp"
-              android:gravity="left"
-              android:textColor="@color/secondary_text"
-              android:id="@+id/addressText" />
-          <LinearLayout
-              android:orientation="horizontal"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:paddingBottom="15dp">
-            <TextView
-                android:text="Locality:"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="200dp"
-                android:layout_height="20dp"
-                android:gravity="left"
-                android:textColor="@color/primary_text"
-                android:id="@+id/localityLabel" />
-            <TextView
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/linearLayout">
+            <EditText
+                android:id="@+id/emailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:paddingBottom="20dp"
+                android:hint="Enter company domain" />
+            <Button
+                android:id="@+id/findButton"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:gravity="left"
-                android:textColor="@color/secondary_text"
-                android:id="@+id/localityText" />
-          </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:padding="10dp"
+                android:background="@color/accent"
+                android:textColor="@color/primary_light"
+                android:textSize="20dp"
+                android:text="Search" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:visibility="gone" />
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/resultView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </ScrollView>
+            </RelativeLayout>
+            <WebView
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:padding="10dp"
+                android:id="@+id/logoWebView"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="40dp"
+                android:visibility="gone" />
+          <ListView
+                  android:minWidth="25px"
+                  android:minHeight="25px"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:id="@+id/listView" />
           <LinearLayout
-              android:orientation="horizontal"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:paddingBottom="15dp">
-            <TextView
-                android:text="Region:"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="200dp"
-                android:layout_height="20dp"
-                android:gravity="left"
-                android:textColor="@color/primary_text"
-                android:id="@+id/regionLabel" />
-            <TextView
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:gravity="left"
-                android:textColor="@color/secondary_text"
-                android:id="@+id/regionText" />
-          </LinearLayout>
-          <LinearLayout
-              android:orientation="horizontal"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:paddingBottom="15dp">
-            <TextView
-                android:text="Country:"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="200dp"
-                android:layout_height="20dp"
-                android:gravity="left"
-                android:textColor="@color/primary_text"
-                android:id="@+id/countryLabel" />
-            <TextView
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:gravity="left"
-                android:textColor="@color/secondary_text"
-                android:id="@+id/countryText" />
-          </LinearLayout>
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/organazationSection"
+                android:paddingBottom="15dp">
+            
+            
+           <!--Organization Info-->
+             
+                <TextView
+                    android:text="Organization Info"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/accent"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="15dp" 
+                    android:id="@+id/sectionTitle"/>
+                <LinearLayout
+                     android:orientation="vertical"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:paddingBottom="5dp"
+                     android:id="@+id/sectionLayout">
+                  <LinearLayout
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:paddingBottom="15dp">
+                    <TextView
+                        android:text="Name: "
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="200dp"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/text"
+                        android:id="@+id/NameLabel" />
+                    <TextView
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/primary_light"
+                        android:id="@+id/nameText" />
+                  </LinearLayout>
+                  <LinearLayout
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:paddingBottom="15dp">
+                    <TextView
+                        android:text="On line since: "
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="200dp"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/text"
+                        android:id="@+id/onLineLabel" />
+                    <TextView
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/primary_light"
+                        android:id="@+id/onLineText" />
+                  </LinearLayout>
+                  <LinearLayout
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:paddingBottom="15dp">
+                    <TextView
+                        android:text="Number of Employees: "
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="200dp"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/text"
+                        android:id="@+id/numEmpLabel" />
+                    <TextView
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/primary_light"
+                        android:id="@+id/numEmpText" />
+                  </LinearLayout>
+                  <LinearLayout
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:paddingBottom="15dp">
+                    <TextView
+                        android:text="Founded in: "
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="200dp"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/text"
+                        android:id="@+id/foundedLabel" />
+                    <TextView
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/primary_light"
+                        android:id="@+id/foundedText" />
+                  </LinearLayout>
+                  <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="15dp">
+                    <TextView
+                        android:text="Website: "
+                        android:layout_width="200dp"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/primary_text"
+                        android:id="@+id/websiteLabel"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                    <TextView
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/secondary_text"
+                        android:id="@+id/websiteText" />
+                  </LinearLayout>
+                </LinearLayout>
+
+            <!--Social Profiles-->
+                <TextView
+                    android:text="Social Profiles "
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/accent"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="15dp" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/socialProfilesSection"
+                    android:padding="10dp"
+                    android:paddingBottom="15dp">
+                    <TextView
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/text"
+                        android:id="@+id/social1Text" />
+                    <TextView
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/primary_light"
+                        android:id="@+id/social2Text" />
+                </LinearLayout>
+            <!--Links-->
+                <TextView
+                    android:text="Links "
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/accent"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="15dp" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linksSection"
+                    android:padding="10dp"
+                    android:paddingBottom="15dp">
+                    <TextView
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/primary_light"
+                        android:id="@+id/link1Text" />
+                    <TextView
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/primary_light"
+                        android:id="@+id/link2Text" />
+                </LinearLayout>
+                <TextView
+                    android:text="Overview"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/accent"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="15dp" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linksSection"
+                    android:padding="10dp"
+                    android:paddingBottom="15dp">
+                    <TextView
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:textColor="@color/primary_light"
+                        android:id="@+id/overviewText" />
+                </LinearLayout>
+            <!--Contact Info-->
+                <TextView
+                    android:text="Contact Info"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/accent"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="15dp" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="15dp">
+                    <TextView
+                        android:text="Email 1: "
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="200dp"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/text"
+                        android:id="@+id/email1Label" />
+                    <TextView
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:id="@+id/email1Text"
+                        android:textColor="@color/primary_light" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="15dp">
+                    <TextView
+                        android:text="Email 2: "
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="200dp"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/text"
+                        android:id="@+id/email2Label" />
+                    <TextView
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:id="@+id/email2Text"
+                        android:textColor="@color/primary_light" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="15dp">
+                    <TextView
+                        android:text="Phone 1: "
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="200dp"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/text"
+                        android:id="@+id/phone1Label" />
+                    <TextView
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:id="@+id/phone1Text"
+                        android:textColor="@color/primary_light" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="15dp">
+                    <TextView
+                        android:text="Phone 2: "
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="200dp"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/text"
+                        android:id="@+id/phone2Label" />
+                    <TextView
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:id="@+id/phone2Text"
+                        android:textColor="@color/primary_light" />
+                </LinearLayout>
+            <!--Address-->
+                <TextView
+                    android:text="Address:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:textColor="@color/text"
+                    android:id="@+id/addressLabel" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/addressesSection">
+                    <TextView
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="left"
+                        android:textColor="@color/primary_light"
+                        android:id="@+id/addressText" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="15dp">
+                        <TextView
+                            android:text="Locality:"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="200dp"
+                            android:layout_height="20dp"
+                            android:gravity="left"
+                            android:textColor="@color/text"
+                            android:id="@+id/localityLabel" />
+                        <TextView
+                            android:text=""
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:gravity="left"
+                            android:textColor="@color/primary_light"
+                            android:id="@+id/localityText" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="15dp">
+                        <TextView
+                            android:text="Region:"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="200dp"
+                            android:layout_height="20dp"
+                            android:gravity="left"
+                            android:textColor="@color/text"
+                            android:id="@+id/regionLabel" />
+                        <TextView
+                            android:text=""
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:gravity="left"
+                            android:textColor="@color/primary_light"
+                            android:id="@+id/regionText" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="15dp">
+                        <TextView
+                            android:text="Country:"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="200dp"
+                            android:layout_height="20dp"
+                            android:gravity="left"
+                            android:textColor="@color/text"
+                            android:id="@+id/countryLabel" />
+                        <TextView
+                            android:text=""
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:gravity="left"
+                            android:textColor="@color/primary_light"
+                            android:id="@+id/countryText" />
+                    </LinearLayout>
+                </LinearLayout>
+            <!--Images-->
+                <TextView
+                    android:text="Images: "
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/accent"
+                    android:gravity="left"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="15dp" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imagesSection"
+                    android:padding="10dp" />
+            </LinearLayout>
         </LinearLayout>
-        <!--Images-->
-        <TextView
-            android:text="Images: "
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/primary_text"
-            android:gravity="left"
-            android:paddingTop="10dp"
-            android:paddingBottom="15dp" />
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/imagesSection"
-            android:padding="10dp" />
-      </LinearLayout>
-    </LinearLayout>
-  </ScrollView>
+    </ScrollView>
 </LinearLayout>

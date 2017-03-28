@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Android.Text.Method;
 using Android.Text;
 using Android.Text.Util;
+using System.Collections.Generic;
 
 
 namespace CompanyFinder
@@ -29,9 +30,11 @@ namespace CompanyFinder
     public class MainActivity : Activity
     {
         
-        //Color backgroundColor = Color.ParseColor("#E040FB");
-        //Toolbar toolBar;
         LinearLayout linearLayout;
+        
+        ListView listView;
+        List<string> listViewItems;
+
         TextView noResults;
         Button findBtn;
         TextView email;
@@ -48,17 +51,26 @@ namespace CompanyFinder
 
             SetContentView(Resource.Layout.Main);
            
-            //toolBar = FindViewById<Toolbar>(Resource.Id.toolBar);
-           
-
             linearLayout = FindViewById<LinearLayout>(Resource.Id.linearLayout);
+            listView = FindViewById<ListView>(Resource.Id.listView);
+                    
             noResults = FindViewById<TextView>(Resource.Id.noResultsText);
             findBtn = FindViewById<Button>(Resource.Id.findButton);
             email = FindViewById<TextView>(Resource.Id.emailText);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progressBar);
             result = FindViewById<TextView>(Resource.Id.resultView);
 
-            //linearLayout.SetBackgroundColor(backgroundColor);
+            listViewItems = new List<string>();
+            listViewItems.Add("Organization Info");
+            listViewItems.Add("Social Profiles");
+            listViewItems.Add("Links");
+            listViewItems.Add("Overview");
+            listViewItems.Add("Contact Info");
+            listViewItems.Add("Images");
+
+            ArrayAdapter adapter =  new ArrayAdapter(this, Resource.Layout.ListViewItem, listViewItems);
+            listView.Adapter  = adapter;
+            listView.ItemClick += OnListItemClick;
 
             findBtn.Click += async (sender, e) =>
             {
@@ -77,9 +89,13 @@ namespace CompanyFinder
                     noResults.Visibility = ViewStates.Visible;
                 }
             };
-
-            //SetActionBar(toolBar);
         }
+
+        public void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Toast.MakeText(this, e.Position.ToString(), ToastLength.Long).Show();
+        }
+
 
         private async Task<JsonValue> FetchInfoAsync(Uri uri)
         {

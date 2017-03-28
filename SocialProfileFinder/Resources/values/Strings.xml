@@ -3,12 +3,12 @@
   <string name="APIkey">8169165e74d2929e</string>
   <string name="ApplicationName">Company Finder</string>
   <string name="APIurl">https://api.fullcontact.com/v2/company/lookup.json?domain=</string>
-  <color name="accent">#009688</color>
+  <color name="accent">#E91E63</color>
   <color name="primary">#9E9E9E</color>
   <color name="primary_dark">#616161</color>
-  <color name="primary_light">#F5F5F5</color>
+  <color name="primary_light">#F8BBD0</color>
   <color name="primary_text">#212121</color>
   <color name="secondary_text">#757575</color>
   <color name="divider">#BDBDBD</color>
-  <color name="text">#212121</color>
+  <color name="text">#FFFFFF</color>
 </resources>
