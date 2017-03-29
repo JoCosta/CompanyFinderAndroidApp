@@ -131,7 +131,7 @@
     <AndroidResource Include="Resources\drawable\findWhite.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ListViewItem.xml" />
+    <AndroidResource Include="Resources\drawable\findBlack.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -31,9 +31,8 @@ namespace CompanyFinder
     {
         
         LinearLayout linearLayout;
-        
-        ListView listView;
-        List<string> listViewItems;
+
+        Toolbar toolBar;
 
         TextView noResults;
         Button findBtn;
@@ -52,25 +51,16 @@ namespace CompanyFinder
             SetContentView(Resource.Layout.Main);
            
             linearLayout = FindViewById<LinearLayout>(Resource.Id.linearLayout);
-            listView = FindViewById<ListView>(Resource.Id.listView);
-                    
+
+            toolBar = FindViewById<Toolbar>(Resource.Id.toolBar);
             noResults = FindViewById<TextView>(Resource.Id.noResultsText);
             findBtn = FindViewById<Button>(Resource.Id.findButton);
             email = FindViewById<TextView>(Resource.Id.emailText);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progressBar);
             result = FindViewById<TextView>(Resource.Id.resultView);
 
-            listViewItems = new List<string>();
-            listViewItems.Add("Organization Info");
-            listViewItems.Add("Social Profiles");
-            listViewItems.Add("Links");
-            listViewItems.Add("Overview");
-            listViewItems.Add("Contact Info");
-            listViewItems.Add("Images");
-
-            ArrayAdapter adapter =  new ArrayAdapter(this, Resource.Layout.ListViewItem, listViewItems);
-            listView.Adapter  = adapter;
-            listView.ItemClick += OnListItemClick;
+            Color toolBarTitleColor = new Color(0,0,0);
+            toolBar.SetTitleTextColor(toolBarTitleColor);
 
             findBtn.Click += async (sender, e) =>
             {
