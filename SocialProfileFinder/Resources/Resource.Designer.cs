@@ -122,21 +122,6 @@ namespace CompanyFinder
 			// aapt resource value: 0x7f07000b
 			public const int NameLabel = 2131165195;
 			
-			// aapt resource value: 0x7f070024
-			public const int addressLabel = 2131165220;
-			
-			// aapt resource value: 0x7f070026
-			public const int addressText = 2131165222;
-			
-			// aapt resource value: 0x7f070025
-			public const int addressesSection = 2131165221;
-			
-			// aapt resource value: 0x7f07002b
-			public const int countryLabel = 2131165227;
-			
-			// aapt resource value: 0x7f07002c
-			public const int countryText = 2131165228;
-			
 			// aapt resource value: 0x7f07001c
 			public const int email1Label = 2131165212;
 			
@@ -161,8 +146,8 @@ namespace CompanyFinder
 			// aapt resource value: 0x7f070012
 			public const int foundedText = 2131165202;
 			
-			// aapt resource value: 0x7f07002d
-			public const int imagesSection = 2131165229;
+			// aapt resource value: 0x7f070024
+			public const int imagesSection = 2131165220;
 			
 			// aapt resource value: 0x7f070002
 			public const int linearLayout = 2131165186;
@@ -175,12 +160,6 @@ namespace CompanyFinder
 			
 			// aapt resource value: 0x7f070018
 			public const int linksSection = 2131165208;
-			
-			// aapt resource value: 0x7f070027
-			public const int localityLabel = 2131165223;
-			
-			// aapt resource value: 0x7f070028
-			public const int localityText = 2131165224;
 			
 			// aapt resource value: 0x7f070007
 			public const int logoWebView = 2131165191;
@@ -223,12 +202,6 @@ namespace CompanyFinder
 			
 			// aapt resource value: 0x7f070005
 			public const int progressBar = 2131165189;
-			
-			// aapt resource value: 0x7f070029
-			public const int regionLabel = 2131165225;
-			
-			// aapt resource value: 0x7f07002a
-			public const int regionText = 2131165226;
 			
 			// aapt resource value: 0x7f070006
 			public const int resultView = 2131165190;
