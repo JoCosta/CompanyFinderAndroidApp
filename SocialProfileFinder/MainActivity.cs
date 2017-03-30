@@ -137,7 +137,7 @@ namespace CompanyFinder
             TextView phone1Label = FindViewById<TextView>(Resource.Id.phone1Label);
             TextView phone2Label = FindViewById<TextView>(Resource.Id.phone2Label);
             TextView organazation = FindViewById<TextView>(Resource.Id.nameText);
-            TextView address1Line1 = FindViewById<TextView>(Resource.Id.addressText);
+           // TextView address1Line1 = FindViewById<TextView>(Resource.Id.addressText);
             TextView link1 = FindViewById<TextView>(Resource.Id.link1Text);
             TextView link2 = FindViewById<TextView>(Resource.Id.link2Text);
             TextView social1 = FindViewById<TextView>(Resource.Id.social1Text);

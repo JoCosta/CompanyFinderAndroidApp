@@ -364,6 +364,7 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="10dp"
                     android:paddingBottom="15dp">
                     <TextView
                         android:text="Email 2: "
@@ -386,6 +387,7 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="10dp"
                     android:paddingBottom="15dp">
                     <TextView
                         android:text="Phone 1: "
@@ -408,6 +410,7 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="10dp"
                     android:paddingBottom="15dp">
                     <TextView
                         android:text="Phone 2: "
@@ -427,7 +430,7 @@
                         android:textColor="@color/primary_light" />
                 </LinearLayout>
             <!--Address-->
-                <TextView
+                <!--<TextView
                     android:text="Address:"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_width="wrap_content"
@@ -514,7 +517,7 @@
                             android:textColor="@color/primary_light"
                             android:id="@+id/countryText" />
                     </LinearLayout>
-                </LinearLayout>
+                </LinearLayout>-->
             <!--Images-->
                 <TextView
                     android:text="Images "
