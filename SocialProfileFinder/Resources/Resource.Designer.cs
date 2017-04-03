@@ -104,7 +104,10 @@ namespace CompanyFinder
 			public const int label = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int WhiteFindCompany = 2130837510;
+			public const int monoandroidsplash = 2130837510;
+			
+			// aapt resource value: 0x7f020007
+			public const int WhiteFindCompany = 2130837511;
 			
 			static Drawable()
 			{
@@ -286,6 +289,9 @@ namespace CompanyFinder
 		
 		public partial class Style
 		{
+			
+			// aapt resource value: 0x7f060001
+			public const int Mono_Android_Theme_Splash = 2131099649;
 			
 			// aapt resource value: 0x7f060000
 			public const int MyTheme = 2131099648;

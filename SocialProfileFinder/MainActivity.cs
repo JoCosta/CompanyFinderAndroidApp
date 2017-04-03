@@ -47,7 +47,6 @@ namespace CompanyFinder
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
-
             SetContentView(Resource.Layout.Main);
            
             linearLayout = FindViewById<LinearLayout>(Resource.Id.linearLayout);
@@ -81,12 +80,6 @@ namespace CompanyFinder
             };
         }
 
-        public void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
-        {
-            Toast.MakeText(this, e.Position.ToString(), ToastLength.Long).Show();
-        }
-
-
         private async Task<JsonValue> FetchInfoAsync(Uri uri)
         {
             try
@@ -101,7 +94,6 @@ namespace CompanyFinder
                             {
                                 // Use this stream to build a JSON document object
                                 JsonValue json = await Task.Run(() => System.Json.JsonObject.Load(stream));
-                                //result.Text = json.ToString().Replace("\"", string.Empty);
                                 return json;
                             }
                         }
@@ -148,8 +140,6 @@ namespace CompanyFinder
 
             if (company.ContainsKey("logo"))
             { 
-                //loadImage(logo, company["logo"]);
-                //web.LoadDataWithBaseURL(null, "<html><head></head><body><table style=\"width:100%; height:100%;\"><tr><td style=\"vertical-align:middle;\"><img src=\"" + company["logo"] + "\"></td></tr></table></body></html>", "html/css", "utf-8", null);
                 logo.LoadUrl(company["logo"]);
                 Color transparent = new Color(0x00000000);
                 logo.SetBackgroundColor(transparent);
